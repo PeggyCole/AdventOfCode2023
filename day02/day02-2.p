@@ -31,15 +31,9 @@ repeat
       vcInline = trim(entry(viCounterInline, vcShow, ",")).
         
       case trim(entry(2, vcInLine, " ")):
-        when "blue" then 
-          if int(trim(entry(1, vcInLine, " "))) > viMaxBlue then
-            viMaxBlue = int(trim(entry(1, vcInLine, " "))).
-        when "red" then 
-          if int(trim(entry(1, vcInLine, " "))) > viMaxRed then
-            viMaxRed = int(trim(entry(1, vcInLine, " "))).
-        when "green" then 
-          if int(trim(entry(1, vcInLine, " "))) > viMaxGreen then
-            viMaxGreen = int(trim(entry(1, vcInLine, " "))).
+        when "blue"  then viMaxBlue = max(int(trim(entry(1, vcInLine, " "))), viMaxBlue).
+        when "red"   then viMaxRed = max(int(trim(entry(1, vcInLine, " "))), viMaxRed).
+        when "green" then viMaxGreen = max(int(trim(entry(1, vcInLine, " "))), viMaxGreen).
       end case.             
     end.        
   end.
